@@ -7,7 +7,7 @@ const errorHandler = require('../src/error-handlers/500.js');
 const logger = require('../src/middleware/logger.js');
 const disneyRouter = require('./routes/disneyCharacter.js');
 const makeupRouter = require('./routes/makeup.js');
-
+const todoRouter = require('./routes/to-do.js');
 
 const app = express();
 app.use(express.json());
@@ -16,6 +16,7 @@ app.use(logger);
 
 app.use(disneyRouter);
 app.use(makeupRouter);
+app.use(todoRouter);
 
 
 app.use('*', notFoundHandler);
