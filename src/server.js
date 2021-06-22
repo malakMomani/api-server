@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 const express = require('express');
+const cors = require('cors');
 const notFoundHandler = require('../src/error-handlers/404.js');
 const errorHandler = require('../src/error-handlers/500.js');
 const logger = require('../src/middleware/logger.js');
@@ -11,6 +12,7 @@ const todoRouter = require('./routes/to-do.js');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.use(logger);
 
